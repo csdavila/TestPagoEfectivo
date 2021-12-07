@@ -1,0 +1,14 @@
+<mat-drawer-container>
+  <mat-drawer #drawer mode="side" class="menu">
+    <ul>
+      <li class="menu-li"><a [routerLink]="['/home']">Inicio</a></li>
+      <li class="menu-li"><a [routerLink]="['/generate']">Generar Código</a></li>
+      <li class="menu-li"><a [routerLink]="['/redeem']">Canjear Código</a></li>
+    </ul>
+  </mat-drawer>
+
+  <div>
+    <button mat-raised-button style="background-color: yellowgreen;"  (click)="drawer.toggle();"> Visualizar Navegación</button>
+   <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container> 

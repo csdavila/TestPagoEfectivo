@@ -1,0 +1,22 @@
+<div class="contenido">
+    <h1 mat-dialog-title>Canjear Código </h1>
+    <div mat-dialog-content> 
+        <mat-form-field>
+            <mat-label>Código: </mat-label>
+            <input maxlength="36" matInput [(ngModel)]="code"> 
+            <mat-error></mat-error>
+        </mat-form-field>
+        <br>
+        <br>
+        <p> <strong> {{message}} </strong> </p>
+        <!-- <p> <strong class="code">{{code}}</strong> </p> -->
+    </div>
+    <div mat-dialog-actions style="padding-bottom: 50px;">
+        <br>
+        <button mat-raised-button   (click)="clean()">Limpiar</button>
+        &nbsp;
+        <button mat-raised-button color="primary" 
+        (click)="redeem()">Canjear</button>
+        <br>
+    </div>
+</div>

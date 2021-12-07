@@ -1,0 +1,41 @@
+
+<div>
+    <br>
+    <button mat-raised-button color="primary" (click)="getAll()">Actualizar Lista de Códigos</button>
+    <br>
+</div>
+<div>
+    <br>
+
+    <table mat-table [dataSource]="lst" class="mat-elevation-z4">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> # </th>
+            <td mat-cell *matCellDef="let element">{{element.Id}}</td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element">{{element.Name}}</td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Correo </th>
+            <td mat-cell *matCellDef="let element">{{element.Email}}</td>
+        </ng-container>
+        <ng-container matColumnDef="code">
+            <th mat-header-cell *matHeaderCellDef> Código </th>
+            <td mat-cell *matCellDef="let element">{{element.Code}}</td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>
+            <td mat-cell *matCellDef="let element" [ngClass]="element.Status == 'Canjeado' ? 'red' : 'green'">{{element.Status}}</td>
+        </ng-container>
+        <!-- <ng-container matColumnDef="opciones">
+            <th mat-header-cell *matHeaderCellDef> Opciones </th>
+            <td mat-cell *matCellDef="let element"> 
+                <button (click)="openEdit(element)" mat-raised-button color="basic">Editar</button>  
+                <button (click)="delete(element)" mat-raised-button color="warn">Eliminar</button>
+            </td>
+        </ng-container> -->
+        <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnas"></tr>
+    </table>
+</div>
